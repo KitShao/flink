@@ -111,6 +111,7 @@ final class SetOperationFactory {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private ResolvedSchema createCommonTableSchema(QueryOperation left, QueryOperation right) {
         final ResolvedSchema leftSchema = left.getResolvedSchema();
         final List<DataType> leftDataTypes = leftSchema.getColumnDataTypes();
@@ -121,7 +122,7 @@ final class SetOperationFactory {
                         .mapToObj(
                                 idx ->
                                         findCommonColumnType(leftDataTypes, rightDataTypes, idx)
-                                                .orElseThrow(AssertionError::new))
+                                                .<AssertionError>orElseThrow(AssertionError::new))
                         .map(TypeConversions::fromLogicalToDataType)
                         .collect(Collectors.toList());
         return ResolvedSchema.physical(leftSchema.getColumnNames(), resultDataTypes);

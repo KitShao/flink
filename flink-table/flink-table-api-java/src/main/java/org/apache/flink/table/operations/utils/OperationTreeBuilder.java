@@ -666,7 +666,7 @@ public final class OperationTreeBuilder {
                     .map(
                             ex ->
                                     ExpressionUtils.extractValue(ex, String.class)
-                                            .orElseThrow(
+                                            .<TableException>orElseThrow(
                                                     () ->
                                                             new TableException(
                                                                     "Expected string literal as alias.")))

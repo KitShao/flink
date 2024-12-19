@@ -595,7 +595,7 @@ final class AggregateOperationFactory {
                             .map(
                                     alias ->
                                             ExpressionUtils.extractValue(alias, String.class)
-                                                    .orElseThrow(
+                                                    .<ValidationException>orElseThrow(
                                                             () ->
                                                                     new ValidationException(
                                                                             "Unexpected alias: "

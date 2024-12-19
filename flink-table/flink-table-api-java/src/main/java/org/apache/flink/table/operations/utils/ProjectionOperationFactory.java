@@ -99,7 +99,7 @@ final class ProjectionOperationFactory {
         extractNames(namedExpressions).stream()
                 .map(
                         name ->
-                                name.orElseThrow(
+                                name.<TableException>orElseThrow(
                                         () ->
                                                 new TableException(
                                                         "Could not name a field in a projection.")))

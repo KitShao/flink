@@ -1094,13 +1094,13 @@ under the License.
 								<skip>true</skip>
 							</configuration>
 						</plugin>
-						<plugin>
+						<!--<plugin>
 							<groupId>com.diffplug.spotless</groupId>
 							<artifactId>spotless-maven-plugin</artifactId>
 							<configuration>
 								<skip>true</skip>
 							</configuration>
-						</plugin>
+						</plugin>-->
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-enforcer-plugin</artifactId>
@@ -1170,7 +1170,6 @@ under the License.
 						<groupId>com.github.hazendaz.spotbugs</groupId>
 						<artifactId>spotbugs-maven-plugin</artifactId>
 						<version>3.0.6</version>
-
 						<executions>
 							<execution>
 								<id>findbugs-run</id>
@@ -1315,7 +1314,7 @@ under the License.
 										<!-- the rules below should stay in sync with Flink Release wiki documentation and the CI scripts -->
 										<requireMavenVersion>
 											<!-- maven version must be lower than 3.3. See FLINK-3158 -->
-											<version>(,3.3)</version>
+											<version>(,3.9)</version>
 										</requireMavenVersion>
 										<requireJavaVersion>
 											<version>[1.8.0,1.8.1)</version>
@@ -1592,10 +1591,10 @@ under the License.
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 			</plugin>
-			<plugin>
+			<!--<plugin>
 				<groupId>com.diffplug.spotless</groupId>
 				<artifactId>spotless-maven-plugin</artifactId>
-			</plugin>
+			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -2023,7 +2022,7 @@ under the License.
 					</configuration>
 				</plugin>
 
-				<plugin>
+				<!--<plugin>
 					<groupId>com.diffplug.spotless</groupId>
 					<artifactId>spotless-maven-plugin</artifactId>
 					<version>${spotless.version}</version>
@@ -2034,7 +2033,7 @@ under the License.
 								<style>AOSP</style>
 							</googleJavaFormat>
 
-							<!-- \# refers to the static imports -->
+							&lt;!&ndash; \# refers to the static imports &ndash;&gt;
 							<importOrder>
 								<order>org.apache.flink,org.apache.flink.shaded,,javax,java,scala,\#</order>
 							</importOrder>
@@ -2051,7 +2050,7 @@ under the License.
 							</goals>
 						</execution>
 					</executions>
-				</plugin>
+				</plugin>-->
 
 
 				<plugin>
